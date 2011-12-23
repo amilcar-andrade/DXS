@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb2f414f-ae30-4213-8483-83cc8587253d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/certificaciones.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/contacto.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/empresa.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.rb" afterPath="$PROJECT_DIR$/app.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/empresa.erb" afterPath="$PROJECT_DIR$/views/empresa.erb" />
     </list>
     <ignored path="DXS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,7 +38,7 @@
       <file leaf-file-name="empresa.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/empresa.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="46" selection-start="469" selection-end="469" vertical-scroll-proportion="0.39050537">
+            <state line="152" column="62" selection-start="3751" selection-end="3751" vertical-scroll-proportion="0.4486983">
               <folding />
             </state>
           </provider>
@@ -91,10 +88,10 @@
         <option value="$PROJECT_DIR$/views/home.erb" />
         <option value="$PROJECT_DIR$/views/inicio.erb" />
         <option value="$PROJECT_DIR$/views/contacto.erb" />
-        <option value="$PROJECT_DIR$/views/empresa.erb" />
         <option value="$PROJECT_DIR$/views/valores.erb" />
         <option value="$PROJECT_DIR$/app.rb" />
         <option value="$PROJECT_DIR$/views/layout.erb" />
+        <option value="$PROJECT_DIR$/views/empresa.erb" />
       </list>
     </option>
   </component>
@@ -410,7 +407,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/empresa.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="46" selection-start="469" selection-end="469" vertical-scroll-proportion="0.39050537">
+        <state line="152" column="62" selection-start="3751" selection-end="3751" vertical-scroll-proportion="0.4486983">
           <folding />
         </state>
       </provider>

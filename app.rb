@@ -22,3 +22,7 @@ get '/valores' do
   @titulo = "Nuestra Empresa | Dexter Suasor"
   erb:valores
 end
+
+get '/popo' do
+  params.to_s
+end

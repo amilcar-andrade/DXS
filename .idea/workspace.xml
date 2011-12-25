@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb2f414f-ae30-4213-8483-83cc8587253d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.rb" afterPath="$PROJECT_DIR$/app.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/bootstrap.css" afterPath="$PROJECT_DIR$/public/css/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/custom.css" afterPath="$PROJECT_DIR$/public/css/custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/home.html" afterPath="$PROJECT_DIR$/public/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/contacto.erb" afterPath="$PROJECT_DIR$/views/contacto.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/empresa.erb" afterPath="$PROJECT_DIR$/views/empresa.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/inicio.erb" afterPath="$PROJECT_DIR$/views/inicio.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layout.erb" afterPath="$PROJECT_DIR$/views/layout.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/valores.erb" afterPath="$PROJECT_DIR$/views/valores.erb" />
-    </list>
+    <list default="true" id="bb2f414f-ae30-4213-8483-83cc8587253d" name="Default" comment="" />
     <ignored path="DXS.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -46,7 +35,7 @@
       <file leaf-file-name="layout.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/layout.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="61" selection-start="1256" selection-end="1256" vertical-scroll-proportion="0.47694755">
+            <state line="39" column="61" selection-start="1256" selection-end="1256" vertical-scroll-proportion="0.9300477">
               <folding />
             </state>
           </provider>
@@ -417,7 +406,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/layout.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="61" selection-start="1256" selection-end="1256" vertical-scroll-proportion="0.47694755">
+        <state line="39" column="61" selection-start="1256" selection-end="1256" vertical-scroll-proportion="0.9300477">
           <folding />
         </state>
       </provider>

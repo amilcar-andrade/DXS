@@ -3,6 +3,7 @@ require "bundler/setup"
 require "sinatra"
 require "sequel"
 require "date"
+require "pony"
 
 DB = Sequel.connect(:adapter => "mysql", :host=>"localhost", :user=>"root", :database=>"DXRS")
 
@@ -32,12 +33,16 @@ DB.create_table?(:estado) do
 
 end
 
-#llenaestados()
 
 
 get '/inicio' do
   @titulo = "Inicio | Dexter Suasor"
   erb :inicio
+end
+
+get '/estados' do
+  llenaestados()
+  return "listo"
 end
 
 get '/empresa' do

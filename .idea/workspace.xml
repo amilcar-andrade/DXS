@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb2f414f-ae30-4213-8483-83cc8587253d" name="Default" comment="" />
+    <list default="true" id="bb2f414f-ae30-4213-8483-83cc8587253d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.rb" afterPath="$PROJECT_DIR$/app.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/contacto.erb" afterPath="$PROJECT_DIR$/views/contacto.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layout.erb" afterPath="$PROJECT_DIR$/views/layout.erb" />
+    </list>
     <ignored path="DXS.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,7 +33,7 @@
       <file leaf-file-name="empresa.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/empresa.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="20" selection-start="491" selection-end="491" vertical-scroll-proportion="0.0">
+            <state line="19" column="20" selection-start="491" selection-end="491" vertical-scroll-proportion="-0.625">
               <folding />
             </state>
           </provider>
@@ -35,7 +42,7 @@
       <file leaf-file-name="layout.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/layout.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="61" selection-start="1256" selection-end="1256" vertical-scroll-proportion="0.9300477">
+            <state line="39" column="33" selection-start="1228" selection-end="1228" vertical-scroll-proportion="0.23688394">
               <folding />
             </state>
           </provider>
@@ -44,7 +51,7 @@
       <file leaf-file-name="contacto.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/contacto.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="168" column="51" selection-start="4363" selection-end="4422" vertical-scroll-proportion="0.0">
+            <state line="62" column="58" selection-start="1833" selection-end="1833" vertical-scroll-proportion="-10.041667">
               <folding />
             </state>
           </provider>
@@ -53,7 +60,7 @@
       <file leaf-file-name="valores.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/valores.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="61" selection-start="939" selection-end="939" vertical-scroll-proportion="0.0">
+            <state line="18" column="61" selection-start="939" selection-end="939" vertical-scroll-proportion="-11.25">
               <folding />
             </state>
           </provider>
@@ -62,7 +69,7 @@
       <file leaf-file-name="inicio.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/inicio.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="77" selection-start="130" selection-end="130" vertical-scroll-proportion="0.0">
+            <state line="3" column="77" selection-start="130" selection-end="130" vertical-scroll-proportion="-1.875">
               <folding />
             </state>
           </provider>
@@ -71,7 +78,7 @@
       <file leaf-file-name="app.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="10" selection-start="401" selection-end="401" vertical-scroll-proportion="0.0">
+            <state line="34" column="1" selection-start="977" selection-end="977" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -92,12 +99,12 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/views/home.erb" />
-        <option value="$PROJECT_DIR$/app.rb" />
-        <option value="$PROJECT_DIR$/views/contacto.erb" />
         <option value="$PROJECT_DIR$/public/home.html" />
         <option value="$PROJECT_DIR$/views/valores.erb" />
         <option value="$PROJECT_DIR$/views/empresa.erb" />
         <option value="$PROJECT_DIR$/views/inicio.erb" />
+        <option value="$PROJECT_DIR$/views/contacto.erb" />
+        <option value="$PROJECT_DIR$/app.rb" />
         <option value="$PROJECT_DIR$/views/layout.erb" />
       </list>
     </option>
@@ -211,6 +218,24 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="RubyRunConfigurationType" factoryName="Ruby">
+      <module name="" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method />
     </configuration>
     <configuration default="true" type="CucumberRunConfigurationType" factoryName="Cucumber">
@@ -375,38 +400,44 @@
         <state line="39" column="36" selection-start="1231" selection-end="1231" vertical-scroll-proportion="0.47694755" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/inicio.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="77" selection-start="130" selection-end="130" vertical-scroll-proportion="-1.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/empresa.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="20" selection-start="491" selection-end="491" vertical-scroll-proportion="0.0">
+        <state line="19" column="20" selection-start="491" selection-end="491" vertical-scroll-proportion="-0.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/valores.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="61" selection-start="939" selection-end="939" vertical-scroll-proportion="-11.25">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/contacto.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="168" column="51" selection-start="4363" selection-end="4422" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/valores.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="61" selection-start="939" selection-end="939" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/inicio.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="77" selection-start="130" selection-end="130" vertical-scroll-proportion="0.0">
+        <state line="62" column="58" selection-start="1833" selection-end="1833" vertical-scroll-proportion="-10.041667">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="10" selection-start="401" selection-end="401" vertical-scroll-proportion="0.0" />
+        <state line="34" column="1" selection-start="977" selection-end="977" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/layout.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="61" selection-start="1256" selection-end="1256" vertical-scroll-proportion="0.9300477">
+        <state line="39" column="33" selection-start="1228" selection-end="1228" vertical-scroll-proportion="0.23688394">
           <folding />
         </state>
       </provider>

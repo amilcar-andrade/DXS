@@ -2,14 +2,14 @@
 <hr>
 
 <div class="row">
-  <div class="span6">
-    <form action="/popo" class="form-stacked">
+  <div class="span7">
+    <form action="/valida" class="form-stacked">
       <div class="clearfix">
 
         <label for="nombre">Nombre</label>
 
         <div class="input">
-          <input class="large" id="nombre" name="nombre" size="30" type="text"/>
+          <input class="large" name="nombre" size="30" type="text"/>
         </div>
         <span class="help-block">Campo Obligatorio</span>
 
@@ -19,7 +19,7 @@
         <label for="compania">Compañia</label>
 
         <div class="input">
-          <input class="large" id="compañia" name="compañia" size="30" type="text"/>
+          <input class="large" name="compania" size="30" type="text"/>
         </div>
 
       </div>
@@ -30,7 +30,7 @@
         <div class="input">
           <div class="input-prepend">
             <span class="add-on">@</span>
-            <input class="medium" id="mail" name="mail" size="20" type="text"/>
+            <input class="medium" name="mail" size="20" type="text"/>
           </div>
           <span class="help-block">Campo Obligatorio</span>
         </div>
@@ -42,7 +42,7 @@
         <div class="input">
           <div class="input-prepend">
             <span class="add-on">#</span>
-            <input class="medium" id="telefono" name="telefono" size="20" type="text"/>
+            <input class="medium" name="telefono" size="20" type="text"/>
           </div>
           <span class="help-block">Campo Obligatorio</span>
         </div>
@@ -51,74 +51,10 @@
         <label for="stackedSelect">Estado</label>
 
         <div class="input">
-          <select name="stackedSelect" id="stackedSelect">
-            <option value="0"></option>
-
-            <option value="1">Aguascalientes</option>
-
-            <option value="2">Baja California</option>
-
-            <option value="3">Baja California Sur</option>
-
-            <option value="4">Campeche</option>
-
-            <option value="5">Chiapas</option>
-
-            <option value="6">Chihuahua</option>
-
-            <option value="7">Coahuila</option>
-
-            <option value="8">Colima</option>
-
-            <option value="9">Distrito Federal</option>
-
-            <option value="10">Durango</option>
-
-            <option value="11">Guanajuato</option>
-
-            <option value="12">Guerrero</option>
-
-            <option value="13">Hidalgo</option>
-
-            <option value="14">Jalisco</option>
-
-            <option value="15">Estado de México</option>
-
-            <option value="16">Michoacán
-
-            <option value="17">Morelos</option>
-
-            <option value="18">Nayarit</option>
-
-            <option value="19">Nuevo León</option>
-
-            <option value="20">Oaxaca</option>
-
-            <option value="21">Puebla</option>
-
-            <option value="22">Querétaro</option>
-
-            <option value="23">Quintana Roo</option>
-
-            <option value="24">San Luis Potosí</option>
-
-            <option value="25">Sinaloa</option>
-
-            <option value="26">Sonora</option>
-
-            <option value="27">Tabasco</option>
-
-            <option value="28">Tamaulipas</option>
-
-            <option value="29">Tlaxcala</option>
-
-            <option value="30">Veracruz</option>
-
-            <option value="31">Yucatán</option>
-
-            <option value="32">Zacatecas</option>
-
-
+          <select name="estado" id="stackedSelect">
+            <% for x in 0...@estados.size do %>    <!-- @estados.size.downto(0) metodo reverse -->
+              <option value="<%=@estados[x][:name] %>"> <%=@estados[x][:name] %></option>
+            <% end %>
           </select>
         </div>
       </div>
@@ -129,7 +65,7 @@
         <label for="textarea">Pregunta</label>
 
         <div class="input">
-          <textarea class="xxlarge" id="pregunta" name="pregunta" rows="3"></textarea>
+          <textarea class="xxlarge" name="pregunta" rows="3"></textarea>
                                     <span class="help-block"> Escribe tu comentario o pregunta
                                     </span>
 
@@ -171,7 +107,22 @@
 
   </div>
   <div class="span5">
+    <h3>Mapa </h3>
+
+    <ul class="media-grid">
+      <li>
+        <a href="#">
+          <img class="thumbnail">
+          <iframe width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com.mx/maps?f=q&amp;source=s_q&amp;hl=es-419&amp;geocode=&amp;q=Ensenada+91+Del.+Cuauht%C3%A9moc+M%C3%A9xico+DF&amp;aq=&amp;sll=23.625269,-102.540613&amp;sspn=23.175469,36.870117&amp;vpsrc=0&amp;ie=UTF8&amp;hq=&amp;hnear=Ensenada+91,+Hip%C3%B3dromo,+Cuauht%C3%A9moc,+Ciudad+de+M%C3%A9xico,+Distrito+Federal&amp;t=p&amp;ll=19.407669,-99.175901&amp;spn=0.024286,0.025749&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
+          <br/>
+
+        </a>
+      </li>
+    </ul>
+    <small>
+      <a href="http://maps.google.com.mx/maps?f=q&amp;source=embed&amp;hl=es-419&amp;geocode=&amp;q=Ensenada+91+Del.+Cuauht%C3%A9moc+M%C3%A9xico+DF&amp;aq=&amp;sll=23.625269,-102.540613&amp;sspn=23.175469,36.870117&amp;vpsrc=0&amp;ie=UTF8&amp;hq=&amp;hnear=Ensenada+91,+Hip%C3%B3dromo,+Cuauht%C3%A9moc,+Ciudad+de+M%C3%A9xico,+Distrito+Federal&amp;t=p&amp;ll=19.407669,-99.175901&amp;spn=0.024286,0.025749&amp;z=14&amp;iwloc=A" style="color:#0000FF;text-align:left">Ver
+        mapa más grande</a></small>
+
 
   </div>
-
 </div>

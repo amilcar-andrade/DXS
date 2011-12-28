@@ -7,11 +7,9 @@ body {
 }
 
 .container.grey {
-  background-color: ##D8D8D8;
+  background-color: #D8D8D8;
 }
 
 p {
-   font-size: 14px;  font-size-adjust: 0.5;
-   text-align: justify;
-
+  text-align: justify;
 }

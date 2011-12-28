@@ -1,0 +1,63 @@
+<h1>Validaci&oacute;n de Documentos
+  <small>Emitidos por DXSR</small>
+</h1>
+<hr>
+
+<div class="row">
+
+
+  <div class="span16">
+    <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Procedimiento WPS</h3>
+
+    <form action="/validawps" class="form-stacked">
+
+      <div class="clearfix">
+        <div class="input">
+          <input class="small" name="id" size="30" type="text"/>
+          <button class="btn success" type="submit">Validar</button>
+          <span class="help-block">ID de Entrada </span>
+        </div>
+
+      </div>
+    </form>
+    <table class="bordered-table zebra-stripe">
+      <thead>
+      <tr>
+        <th>ID de Entrada</th>
+        <th>Posición</th>
+        <th>#F</th>
+        <th>Weld Metal</th>
+        <th>#M ó #P</th>
+        <th>Grupo</th>
+        <th>Diámetro</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <% if @renglon %>
+          <% @renglon.each do |k, v| %>
+            <td>
+              <%= v %></td>
+            <!--con este simbolo imprime -->
+          <% end %>
+        <% end %>
+
+        <% if @comienzo and not @renglon %>
+
+          <div id="alerta" class="alert-message error" data-alert="alert">
+            <a class="close" href="#">&times;</a>
+
+            <p>Tu ID es incorrecta.</p>
+          </div>
+
+        <% end %>
+
+
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+
+</div>

@@ -7,6 +7,20 @@ require "pony"
 
 DB = Sequel.connect(:adapter => "mysql", :host=>"localhost", :user=>"root", :database=>"DXRS")
 
+Pony.options= {
+  :via => :smtp,
+  :via_options => {
+    :address => 'smtp.gmail.com',
+    :port => '587',
+    :enable_starttls_auto => true,
+    :user_name => 'amilcar.andrade.g',
+    :password => 'strokes15',
+    :authentication => :plain, # :plain, :login, :cram_md5, no auth by default
+    :domain => "localhost.localdomain" # the HELO domain provided by the client to the server
+  }
+}
+
+
 DB.create_table?(:contacto) do
   primary_key :id
   String :name
@@ -16,6 +30,68 @@ DB.create_table?(:contacto) do
   String :estado
   String :pregunta
   DateTime :fecha
+
+end
+
+DB.create_table?(:wps) do
+  String :id, :primary_key=>true
+  String :posicion
+  String :f
+  String :weldmetal
+  String :mop
+  String :grupo
+  String :diametro
+
+end
+
+DB.create_table?(:wpq) do
+  String :id, :primary_key=>true
+  String :nombre
+  String :empresa
+  DateTime :fecha
+  String :emision
+  String :vigencia
+  String :codigo
+  String :proceso
+  String :posicion
+  String :f
+  String :weldmetal
+  String :mop
+  String :grupo
+  String :diametro
+  String :elaborado
+
+end
+
+DB.create_table?(:wis) do
+  String :id, :primary_key=>true
+  String :nombre
+  String :empresa
+  DateTime :fecha
+  String :emision
+  String :vigencia
+  String :codigo
+  String :seccion
+  String :autorizado
+  String :certificado
+
+end
+
+DB.create_table?(:pqr) do
+  String :id, :primary_key=>true
+  String :nombre
+  DateTime :fecha
+  String :codigo
+  String :proceso
+  String :posicion
+  String :f
+  String :weldmetal
+  String :mop
+  String :grupo
+  String :diametro
+  String :elaborado
+  String :acreditdado
+  String :certificado
 
 end
 
@@ -34,10 +110,36 @@ DB.create_table?(:estado) do
 end
 
 
-
 get '/inicio' do
   @titulo = "Inicio | Dexter Suasor"
   erb :inicio
+end
+
+get '/wpq' do
+  @titulo = "Validacion WPQ | Dexter Suasor"
+  erb :wpq
+end
+
+get '/wps' do
+  @titulo = "Validacion WPS | Dexter Suasor"
+  @renglon = {}
+  @comienzo = false
+  erb :wps
+end
+
+get '/pqr' do
+  @titulo = "Validacion PQR | Dexter Suasor"
+  erb :pqr
+end
+
+get '/wis' do
+  @titulo = "Validacion WIS | Dexter Suasor"
+  erb :wis
+end
+
+get '/certificaciones' do
+  @titulo = "Certificaciones | Dexter Suasor"
+  erb :certificaciones
 end
 
 get '/estados' do
@@ -61,9 +163,33 @@ get '/valores' do
   erb :valores
 end
 
+get '/validawps' do
+  DB.from(:wps)
+  dataset = DB["SELECT * FROM wps WHERE id = ?", params[:id] ]
+ @renglon = dataset.first
+  @comienzo = true
+  erb :wps
+
+end
+
+
 get '/valida' do
   DB.from(:contacto).insert(:fecha => DateTime.now, :name => params[:nombre], :compania => params[:compania], :mail => params[:mail],
                             :telefono => params[:telefono], :estado => params[:estado], :pregunta => params[:pregunta])
 
+  htmlcuerpo = <<Fin
+<p><strong>Nombre del prospecto:</strong> #{params[:nombre]}   </p>
+<p><strong>Compania: </strong>#{params[:compania]}</p>
+<p><strong>E-mail: </strong>#{params[:mail]}</p>
+<p><strong>Telefono: </strong> #{params[:telefono]}</p>
+<p><strong>Estado: </strong>#{params[:estado]} </p>
+<p><strong>Pregunta: </strong>#{params[:pregunta]}</p>
 
+Fin
+
+  Pony.mail(:to => 'miguel.andrade@dextersuasor.com', :html_body => htmlcuerpo, :subject => 'Un nuevo Prospecto ha llegado ', :body => ' Nombre de prospecto ' + params[:nombre] + ' Compania ' + params[:compania] + ' Fecha '+ DateTime.now.to_s + ' E-mail' + params[:mail] + ' Numero de telefono ' + params[:telefono] + ' Estado ' + params[:estado] + ' Pregunta ' + params[:pregunta])
+  @titulo = "Contacto | Dexter Suasor"
+  @confirmacion = true
+  @estados = DB[:estado].all
+  erb :contacto
 end

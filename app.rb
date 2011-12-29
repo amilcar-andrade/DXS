@@ -117,6 +117,8 @@ end
 
 get '/wpq' do
   @titulo = "Validacion WPQ | Dexter Suasor"
+  @renglon = {}
+  @comienzo = false
   erb :wpq
 end
 
@@ -129,11 +131,15 @@ end
 
 get '/pqr' do
   @titulo = "Validacion PQR | Dexter Suasor"
+  @renglon = {}
+  @comienzo = false
   erb :pqr
 end
 
 get '/wis' do
   @titulo = "Validacion WIS | Dexter Suasor"
+  @renglon = {}
+  @comienzo = false
   erb :wis
 end
 
@@ -165,15 +171,38 @@ end
 
 get '/validawps' do
   DB.from(:wps)
-  dataset = DB["SELECT * FROM wps WHERE id = ?", params[:id] ]
- @renglon = dataset.first
+  dataset = DB["SELECT * FROM wps WHERE id = ?", params[:id]]
+  @renglon = dataset.first
   @comienzo = true
   erb :wps
+end
 
+get '/validawpq' do
+  DB.from(:wpq)
+  dataset = DB["SELECT * FROM wpq WHERE id = ?", params[:id]]
+  @renglon = dataset.first
+  @comienzo = true
+  erb :wpq
+end
+
+get '/validawis' do
+  DB.from(:wis)
+  dataset = DB["SELECT * FROM wis WHERE id = ?", params[:id]]
+  @renglon = dataset.first
+  @comienzo = true
+  erb :wis
+end
+
+get '/validapqr' do
+  DB.from(:pqr)
+  dataset = DB["SELECT * FROM pqr WHERE id = ?", params[:id]]
+  @renglon = dataset.first
+  @comienzo = true
+  erb :pqr
 end
 
 
-get '/valida' do
+post '/valida' do
   DB.from(:contacto).insert(:fecha => DateTime.now, :name => params[:nombre], :compania => params[:compania], :mail => params[:mail],
                             :telefono => params[:telefono], :estado => params[:estado], :pregunta => params[:pregunta])
 
@@ -187,7 +216,7 @@ get '/valida' do
 
 Fin
 
-  Pony.mail(:to => 'miguel.andrade@dextersuasor.com', :html_body => htmlcuerpo, :subject => 'Un nuevo Prospecto ha llegado ', :body => ' Nombre de prospecto ' + params[:nombre] + ' Compania ' + params[:compania] + ' Fecha '+ DateTime.now.to_s + ' E-mail' + params[:mail] + ' Numero de telefono ' + params[:telefono] + ' Estado ' + params[:estado] + ' Pregunta ' + params[:pregunta])
+  Pony.mail(:to => 'amilcar.andrade.g@gmail.com', :html_body => htmlcuerpo, :subject => 'Un nuevo Prospecto ha llegado ', :body => ' Nombre de prospecto ' + params[:nombre] + ' Compania ' + params[:compania] + ' Fecha '+ DateTime.now.to_s + ' E-mail' + params[:mail] + ' Numero de telefono ' + params[:telefono] + ' Estado ' + params[:estado] + ' Pregunta ' + params[:pregunta])
   @titulo = "Contacto | Dexter Suasor"
   @confirmacion = true
   @estados = DB[:estado].all

@@ -37,17 +37,25 @@
       </thead>
       <tbody>
       <tr>
-        <td></td>
+        <% if @renglon %>
+          <% @renglon.each do |k, v| %>
+            <td>
+              <%= v %></td>
+            <!--con este simbolo imprime -->
+          <% end %>
+        <% end %>
 
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <% if @comienzo and not @renglon %>
+
+          <div id="alerta" class="alert-message error" data-alert="alert">
+            <a class="close" href="#">&times;</a>
+
+            <p>Tu ID es incorrecta.</p>
+          </div>
+
+        <% end %>
+
+
       </tr>
       </tbody>
     </table>

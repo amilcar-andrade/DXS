@@ -5,7 +5,6 @@ require "sequel"
 require "date"
 require "pony"
 
-DB = Sequel.connect(:adapter => "mysql", :host=>"localhost", :user=>"root", :database=>"DXRS")
 
 Pony.options= {
   :via => :smtp,
@@ -35,6 +34,14 @@ end
 
 DB.create_table?(:wps) do
   String :id, :primary_key=>true
+  String :nombre
+  String :pqr
+  String :empresa
+  DateTime :fecha
+  String :revision
+  String :fecharevision
+  String :codigo
+  String :proceso
   String :posicion
   String :f
   String :weldmetal
@@ -43,6 +50,7 @@ DB.create_table?(:wps) do
   String :diametro
 
 end
+
 
 DB.create_table?(:wpq) do
   String :id, :primary_key=>true
@@ -60,6 +68,8 @@ DB.create_table?(:wpq) do
   String :grupo
   String :diametro
   String :elaborado
+  String :autorizado
+  String :certificado
 
 end
 
@@ -109,71 +119,100 @@ DB.create_table?(:estado) do
 
 end
 
+get '/exel' do
+  @cadena = []
+  File.open("archivos/base.csv").each do |line|
+    @cadena = line.split(',')
+    dataset = DB["INSERT INTO wps VALUES(?,?,?,?)", *@cadena]
+    return @cadena[1]
+  end
+end
+
 
 get '/inicio' do
-  @titulo = "Inicio | Dexter Suasor"
+  @titulo = " Inicio | Dexter Suasor "
+  @banner = false
   erb :inicio
 end
 
 get '/wpq' do
-  @titulo = "Validacion WPQ | Dexter Suasor"
+  @titulo = " Validacion WPQ | Dexter Suasor "
   @renglon = {}
   @comienzo = false
+  @header = " Validaci&oacute; n Documentos WPQ "
+  @banner = true
   erb :wpq
 end
 
 get '/wps' do
-  @titulo = "Validacion WPS | Dexter Suasor"
+  @titulo = " Validacion WPS | Dexter Suasor "
   @renglon = {}
   @comienzo = false
+  @header = " Validaci&oacute; n Documentos WPS "
+  @banner = true
   erb :wps
 end
 
 get '/pqr' do
-  @titulo = "Validacion PQR | Dexter Suasor"
+  @titulo = " Validacion PQR | Dexter Suasor "
   @renglon = {}
   @comienzo = false
+  @header = " Validaci&oacute; n Documentos PQR "
+  @banner = true
   erb :pqr
 end
 
 get '/wis' do
-  @titulo = "Validacion WIS | Dexter Suasor"
+  @titulo = " Validacion WIS | Dexter Suasor "
   @renglon = {}
   @comienzo = false
+  @header = " Validaci&oacute; n Documentos WIS "
+  @banner = true
   erb :wis
 end
 
 get '/certificaciones' do
-  @titulo = "Certificaciones | Dexter Suasor"
+  @titulo = " Certificaciones | Dexter Suasor "
+  @banner = true
+  @header = " Certificaciones "
+  @banner = true
   erb :certificaciones
 end
 
 get '/estados' do
   llenaestados()
-  return "listo"
+  return " listo "
 end
 
 get '/empresa' do
-  @titulo = "Nuestras Certificaciones | Dexter Suasor"
+  @titulo = " Nuestras Certificaciones | Dexter Suasor "
+  @header = " Nuestras Certificaciones "
+  @banner = true
   erb :empresa
 end
 
 get '/contacto' do
-  @titulo = "Contacto | Dexter Suasor"
+  @titulo = " Contacto | Dexter Suasor "
   @estados = DB[:estado].all
+  @header = " Cont&aacute; ctanos "
+  @banner = true
   erb :contacto
 end
 
 get '/valores' do
-  @titulo = "Nuestra Empresa | Dexter Suasor"
+  @titulo = " Nuestra Empresa | Dexter Suasor "
+  @header = " Nuestra Empresa "
+  @banner = true
   erb :valores
 end
 
 get '/validawps' do
   DB.from(:wps)
-  dataset = DB["SELECT * FROM wps WHERE id = ?", params[:id]]
+  dataset = DB[" SELECT * FROM wps WHERE id = ?", params[:id]]
   @renglon = dataset.first
   @comienzo = true
+  @header = "Validaci&oacute;n Documentos WPS"
+  @banner = true
   erb :wps
 end
 
@@ -182,6 +221,8 @@ get '/validawpq' do
   dataset = DB["SELECT * FROM wpq WHERE id = ?", params[:id]]
   @renglon = dataset.first
   @comienzo = true
+  @header = "Validaci&oacute;n Documentos WPQ"
+  @banner = true
   erb :wpq
 end
 
@@ -190,6 +231,8 @@ get '/validawis' do
   dataset = DB["SELECT * FROM wis WHERE id = ?", params[:id]]
   @renglon = dataset.first
   @comienzo = true
+  @header = "Validaci&oacute;n Documentos WIS"
+  @banner = true
   erb :wis
 end
 
@@ -198,6 +241,8 @@ get '/validapqr' do
   dataset = DB["SELECT * FROM pqr WHERE id = ?", params[:id]]
   @renglon = dataset.first
   @comienzo = true
+  @header = "Validaci&oacute;n Documentos PQR"
+  @banner = true
   erb :pqr
 end
 
@@ -220,5 +265,7 @@ Fin
   @titulo = "Contacto | Dexter Suasor"
   @confirmacion = true
   @estados = DB[:estado].all
+  @header = "Cont&aacute;ctanos"
+  @banner = true
   erb :contacto
 end

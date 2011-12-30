@@ -32,10 +32,6 @@
   </style>
 
 
-
-
-
-
 </head>
 
 <body>
@@ -108,11 +104,15 @@
 </div>
 <div class="container well">
 
+  <% if @banner %>
+    <div id="section_header_medium" style="background-image: url(http://www.appian.com/export/images/headers/medium_banner.png); background-attachment: initial; background-origin: initial; background-clip: initial; background-color: initial; background-position: 0% 0%; background-repeat: no-repeat no-repeat; "/>
+    <h1 id="section_headline_medium"><br>&nbsp;&nbsp;&nbsp; <%= @header %></h1>
+    <br/>
+  <% end %>
 
-  <%= yield %>
-
-
-  </br>
+</div>
+<%= yield %>
+</br>
 
 </div>
 
@@ -139,7 +139,8 @@
     <div class="span4">
       <h4><a href="/certificaciones">Certificación</a></h4>
       <ul>
-        <li><a href="/certificaciones#b1">Elaboraci&oacute;n, Revisión y Certificaci&oacute;n de Procedimientos WPS</a>
+        <li>
+          <a href="/certificaciones#b1">Elaboraci&oacute;n, Revisión y Certificaci&oacute;n de Procedimientos WPS</a>
         </li>
         <li><a href="/certificaciones#b2">Calificaci&oacute;n y Certificaci&oacute;n de Soldadores WPQ</a></li>
         <li><a href="/certificaciones#b2">Certificaci&oacute;n de Inspectores Especialistas en Soldadura WIS</a></li>

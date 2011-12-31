@@ -12,19 +12,27 @@ body {
 
 p {
   text-align: justify;
+  font-size: 1.1em;
+  line-height: 1.8em;
 }
 
 h3 {
   font-size: 18px;
-  color: #800020;
-  font-family: "Georgia"
+  color: #800020
 }
 
 h1 {
   font-size: 38px;
-  font-family: "Georgia"
 }
 
 h1, h3 {
   font-weight: normal;
+}
+
+.topbar {
+  position: relative;
+}
+
+.topbar li {
+  font-weight: bolder;
 }

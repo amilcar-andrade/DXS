@@ -122,9 +122,10 @@ DB.create_table?(:estado) do
 end
 
 get '/exel' do
-  File.open("archivos/base.csv").each do |renglon|
+  File.open("archivos/base.csv").each_line do |renglon|
+    return renglon
     @arreglo = renglon.split(',')
-    puts renglon.to_s
+    puts @arreglo.size.to_s
 
     @arreglo.map! do |valor_columna|
       "'" + valor_columna.strip + "'"

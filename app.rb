@@ -122,19 +122,10 @@ DB.create_table?(:estado) do
 
 end
 
-<<<<<<< HEAD
-get '/exel' do
-  File.open("archivos/base.csv").each_line do |renglon|
-    return renglon
-    @arreglo = renglon.split(',')
-    puts @arreglo.size.to_s
-
-=======
 get '/excel' do
   File.open("archivos/base.csv").read.split(/\r\n?/).each_with_index do |renglon, i|
     next if i == 0 # se salta los titulos de las columnas
     @arreglo = renglon.split(',')
->>>>>>> 75627522c0f8720e982991ce1ede78302a6eb42a
     @arreglo.map! do |valor_columna|
       "'" + valor_columna.strip + "'"
     end
@@ -143,7 +134,6 @@ get '/excel' do
   end
   redirect "/inicio"
 end
-
 
 get '/inicio' do
   @titulo = " Inicio | Dexter Suasor "

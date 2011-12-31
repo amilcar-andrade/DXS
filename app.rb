@@ -6,6 +6,7 @@ require "sequel"
 require "date"
 require "pony"
 require "mysql2"
+require "iconv"
 
 Pony.options= {
   :via => :smtp,
@@ -123,7 +124,10 @@ DB.create_table?(:estado) do
 end
 
 get '/excel' do
-  File.open("archivos/base.csv").read.split(/\r\n?/).each_with_index do |renglon, i|
+  contenido = File.open("archivos/base.csv").read
+  fix_invalid = Iconv.new('UTF-8//IGNORE', 'UTF-8')
+  contenido = fix_invalid.iconv(contenido)
+  contenido.split(/\r\n?/).each_with_index do |renglon, i|
     next if i == 0 # se salta los titulos de las columnas
     @arreglo = renglon.split(',')
     @arreglo.map! do |valor_columna|

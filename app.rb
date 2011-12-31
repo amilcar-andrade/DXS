@@ -139,7 +139,6 @@ get '/excel' do
   redirect "/inicio"
 end
 
-
 get '/inicio' do
   @titulo = " Inicio | Dexter Suasor "
   @banner = false

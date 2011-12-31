@@ -15,7 +15,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.17.2)
-    mysql (2.8.1)
+    mysql2 (0.3.11)
     polyglot (0.3.3)
     pony (1.4)
       mail (> 2.0)
@@ -41,7 +41,7 @@ PLATFORMS
 
 DEPENDENCIES
   heroku
-  mysql
+  mysql2
   pony
   sequel
   sinatra

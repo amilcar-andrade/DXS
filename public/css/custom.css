@@ -16,10 +16,15 @@ p {
 
 h3 {
   font-size: 18px;
-  color: #a00000;
-  font-family: "Georgia"}
+  color: #800020;
+  font-family: "Georgia"
+}
 
 h1 {
   font-size: 38px;
-  color: #a00000;
-  font-family: "Georgia"}
+  font-family: "Georgia"
+}
+
+h1, h3 {
+  font-weight: normal;
+}

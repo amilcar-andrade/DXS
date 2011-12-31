@@ -4,7 +4,7 @@ require "sinatra"
 require "sequel"
 require "date"
 require "pony"
-
+require "mysql2"
 
 Pony.options= {
   :via => :smtp,
@@ -18,6 +18,8 @@ Pony.options= {
     :domain => "localhost.localdomain" # the HELO domain provided by the client to the server
   }
 }
+
+DB = Sequel.connect(:adapter => "mysql2", :host=>"localhost", :user=>"root", :database=>"DXRS")
 
 
 DB.create_table?(:contacto) do
@@ -37,7 +39,7 @@ DB.create_table?(:wps) do
   String :nombre
   String :pqr
   String :empresa
-  DateTime :fecha
+  String :fecha
   String :revision
   String :fecharevision
   String :codigo
@@ -56,7 +58,7 @@ DB.create_table?(:wpq) do
   String :id, :primary_key=>true
   String :nombre
   String :empresa
-  DateTime :fecha
+  String :fecha
   String :emision
   String :vigencia
   String :codigo
@@ -77,7 +79,7 @@ DB.create_table?(:wis) do
   String :id, :primary_key=>true
   String :nombre
   String :empresa
-  DateTime :fecha
+  String :fecha
   String :emision
   String :vigencia
   String :codigo
@@ -90,7 +92,7 @@ end
 DB.create_table?(:pqr) do
   String :id, :primary_key=>true
   String :nombre
-  DateTime :fecha
+  String :fecha
   String :codigo
   String :proceso
   String :posicion
@@ -120,11 +122,15 @@ DB.create_table?(:estado) do
 end
 
 get '/exel' do
-  @cadena = []
-  File.open("archivos/base.csv").each do |line|
-    @cadena = line.split(',')
-    dataset = DB["INSERT INTO wps VALUES(?,?,?,?)", *@cadena]
-    return @cadena[1]
+  File.open("archivos/base.csv").each do |renglon|
+    @arreglo = renglon.split(',')
+    puts renglon.to_s
+
+    @arreglo.map! do |valor_columna|
+      "'" + valor_columna.strip + "'"
+    end
+    @cadena= @arreglo.join(',')
+    DB << "INSERT INTO wps VALUES(#{@cadena})"
   end
 end
 
@@ -139,7 +145,7 @@ get '/wpq' do
   @titulo = " Validacion WPQ | Dexter Suasor "
   @renglon = {}
   @comienzo = false
-  @header = " Validaci&oacute; n Documentos WPQ "
+  @header = " Validaci&oacute;n Documentos WPQ "
   @banner = true
   erb :wpq
 end
@@ -148,7 +154,7 @@ get '/wps' do
   @titulo = " Validacion WPS | Dexter Suasor "
   @renglon = {}
   @comienzo = false
-  @header = " Validaci&oacute; n Documentos WPS "
+  @header = " Validaci&oacute;n Documentos WPS "
   @banner = true
   erb :wps
 end
@@ -157,7 +163,7 @@ get '/pqr' do
   @titulo = " Validacion PQR | Dexter Suasor "
   @renglon = {}
   @comienzo = false
-  @header = " Validaci&oacute; n Documentos PQR "
+  @header = " Validaci&oacute;n Documentos PQR "
   @banner = true
   erb :pqr
 end
@@ -166,7 +172,7 @@ get '/wis' do
   @titulo = " Validacion WIS | Dexter Suasor "
   @renglon = {}
   @comienzo = false
-  @header = " Validaci&oacute; n Documentos WIS "
+  @header = " Validaci&oacute;n Documentos WIS "
   @banner = true
   erb :wis
 end
@@ -194,7 +200,7 @@ end
 get '/contacto' do
   @titulo = " Contacto | Dexter Suasor "
   @estados = DB[:estado].all
-  @header = " Cont&aacute; ctanos "
+  @header = " Cont&aacute;ctanos "
   @banner = true
   erb :contacto
 end
@@ -217,7 +223,6 @@ get '/validawps' do
 end
 
 get '/validawpq' do
-  DB.from(:wpq)
   dataset = DB["SELECT * FROM wpq WHERE id = ?", params[:id]]
   @renglon = dataset.first
   @comienzo = true

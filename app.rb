@@ -21,6 +21,7 @@ Pony.options= {
   }
 }
 
+
 DB = Sequel.connect(:adapter => "mysql2", :host=>"localhost", :user=>"root", :database=>"DXRS")
 
 
@@ -55,13 +56,11 @@ DB.create_table?(:wps) do
 
 end
 
-
 DB.create_table?(:wpq) do
   String :id, :primary_key=>true
   String :nombre
   String :empresa
-  String :fecha
-  String :emision
+  String :fecha_emision
   String :vigencia
   String :codigo
   String :proceso
@@ -69,7 +68,6 @@ DB.create_table?(:wpq) do
   String :f
   String :weldmetal
   String :mop
-  String :grupo
   String :diametro
   String :elaborado
   String :autorizado
@@ -124,9 +122,21 @@ DB.create_table?(:estado) do
 end
 
 get '/excel' do
+  DB.run("DELETE FROM wpq")
+  contenido = File.open("archivos/base2.csv").read
+  contenido = Iconv.new('UTF-8//IGNORE', 'UTF-8').iconv(contenido)
+  contenido.split(/\r\n?/).each_with_index do |renglon, i|
+    next if i == 0 # se salta los titulos de las columnas
+    @arreglo = renglon.split(',')
+    @arreglo.map! do |valor_columna|
+      "'" + valor_columna.strip + "'"
+    end
+    @cadena= @arreglo.join(',')
+    DB << "INSERT INTO wpq VALUES(#{@cadena})"
+  end
+  DB.run("DELETE FROM wps")
   contenido = File.open("archivos/base.csv").read
-  fix_invalid = Iconv.new('UTF-8//IGNORE', 'UTF-8')
-  contenido = fix_invalid.iconv(contenido)
+  contenido = Iconv.new('UTF-8//IGNORE', 'UTF-8').iconv(contenido)
   contenido.split(/\r\n?/).each_with_index do |renglon, i|
     next if i == 0 # se salta los titulos de las columnas
     @arreglo = renglon.split(',')
@@ -136,6 +146,8 @@ get '/excel' do
     @cadena= @arreglo.join(',')
     DB << "INSERT INTO wps VALUES(#{@cadena})"
   end
+
+
   redirect "/inicio"
 end
 
@@ -216,6 +228,13 @@ get '/valores' do
   erb :valores
 end
 
+get '/mision' do
+  @titulo = " Nuestra Empresa | Dexter Suasor "
+  @header = " Nuestra Empresa "
+  @banner = true
+  erb :mision
+end
+
 get '/validawps' do
   DB.from(:wps)
   dataset = DB[" SELECT * FROM wps WHERE id = ?", params[:id]]
@@ -270,7 +289,7 @@ post '/valida' do
 
 Fin
 
-  Pony.mail(:to => 'amilcar.andrade.g@gmail.com', :html_body => htmlcuerpo, :subject => 'Un nuevo Prospecto ha llegado ', :body => ' Nombre de prospecto ' + params[:nombre] + ' Compania ' + params[:compania] + ' Fecha '+ DateTime.now.to_s + ' E-mail' + params[:mail] + ' Numero de telefono ' + params[:telefono] + ' Estado ' + params[:estado] + ' Pregunta ' + params[:pregunta])
+  Pony.mail(:to => 'miguel.andrade@dextersuasor.com', :html_body => htmlcuerpo, :subject => 'Un nuevo Prospecto ha llegado ', :body => ' Nombre de prospecto ' + params[:nombre] + ' Compania ' + params[:compania] + ' Fecha '+ DateTime.now.to_s + ' E-mail' + params[:mail] + ' Numero de telefono ' + params[:telefono] + ' Estado ' + params[:estado] + ' Pregunta ' + params[:pregunta])
   @titulo = "Contacto | Dexter Suasor"
   @confirmacion = true
   @estados = DB[:estado].all

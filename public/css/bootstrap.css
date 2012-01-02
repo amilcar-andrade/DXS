@@ -1466,7 +1466,7 @@ table .headerSortUp.purple, table .headerSortDown.purple {
 .nav .menu-dropdown,
 .topbar div > ul .dropdown-menu,
 .nav .dropdown-menu {
-  background-color: #333;
+  background-color: #404040;
 }
 .topbar div > ul .menu-dropdown a.menu,
 .nav .menu-dropdown a.menu,
@@ -1493,7 +1493,7 @@ table .headerSortUp.purple, table .headerSortDown.purple {
 .nav .menu-dropdown li a,
 .topbar div > ul .dropdown-menu li a,
 .nav .dropdown-menu li a {
-  color: #999;
+  color: #;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
 }
 .topbar div > ul .menu-dropdown li a:hover,

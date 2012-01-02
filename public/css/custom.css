@@ -19,6 +19,7 @@ p {
 h3 {
   font-size: 18px;
   color: #800020
+
 }
 
 h1 {
@@ -34,5 +35,5 @@ h1, h3 {
 }
 
 .topbar li {
-  font-weight: bolder;
+  font-weight: normal;
 }

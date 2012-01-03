@@ -51,15 +51,18 @@
         <ul>
           <li><a href="/inicio"><img src="images/dxs.png" width="125" height="50"/> </a>
           </li>
+          <li><a href="/valores"><br>Nuestra Empresa</a></li>
+
+
           <ul class="nav secondary-nav">
             <li class="menu">
               <a href="#" class="menu"><br>Servicios</a>
               <ul class="menu-dropdown">
-                <li><a href="#">Capacitación</a></li>
+                <li><a href="/capacitacion">Capacitaci&oacute;n</a></li>
                 <li class="divider"></li>
 
 
-                <li><a href="#">Certificacion</a></li>
+                <li><a href="/certificaciones">Certificaci&oacute;n</a></li>
                 <li class="divider"></li>
                 <li><a href="#">Consultoría</a></li>
                 <li class="divider"></li>
@@ -101,9 +104,9 @@
             </ul>
 
 
-            <li><a href="/valores"><br>Nuestra Empresa</a></li>
-
             <li><a href="/contacto"><br>Contacto</a></li>
+
+            <li><a href="/contacto"><br>Bolsa de Trabajo</a></li>
 
 
           </ul>
@@ -118,7 +121,7 @@
 <div class="container well">
   <% if @banner %>
 
-    <div id="section_header_medium" style="background-image: url(http://www.appian.com/export/images/headers/medium_banner.png); height: 60px ">
+    <div id="section_header_medium" style="background-image: url(/images/banner.png); height: 60px ">
       <h1 id="section_headline_medium">&nbsp;<%= @header %>
 
       </h1>
@@ -143,15 +146,15 @@
 
 
     <div class="span4">
-      <h4>Capacitación</h4>
+      <h4><a href="/capacitacion">Capacitación</a></h4>
       <ul>
-        <li>Formación de Soldadores para proyectos especiales</li>
-        <li> Procesos de Soldar por arco eléctrico (Teórico / Práctico)</li>
-        <li> Formación de Supervisores e Inspectores en Soldadura</li>
-        <li>Clínicas de manejo de códigos (AWS, ASME, API)</li>
-        <li>Calculo de costos de soldadura</li>
-        <li>Formación de vendedores técnicos</li>
-        <li>Cursos personalizados</li>
+        <li><a href="/capacitacion#a1">Soldadores para Proyectos</a></li>
+        <li><a href="/capacitacion#a2">Procesos de Soldar </a></li>
+        <li><a href="/capacitacion#a3">Supervisores e Inspectores</a></li>
+        <li><a href="/capacitacion#a4">Manejo de códigos</a></li>
+        <li><a href="/capacitacion#a5">Ensayos no destructivos</a></li>
+        <li><a href="/capacitacion#a6">Formación de vendedores</a></li>
+        <li><a href="/cursos">Cursos personalizados</a></li>
 
 
       </ul>

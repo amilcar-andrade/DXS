@@ -194,9 +194,9 @@ get '/wis' do
 end
 
 get '/certificaciones' do
-  @titulo = " Certificaciones | Dexter Suasor "
+  @titulo = " Servicios Certificaci&oacute;n | Dexter Suasor "
   @banner = true
-  @header = " Certificaciones "
+  @header = " Servicios de Certificaci&oacute;n "
   @banner = true
   erb :certificaciones
 end
@@ -211,6 +211,20 @@ get '/empresa' do
   @header = " Nuestras Certificaciones "
   @banner = true
   erb :empresa
+end
+
+get '/capacitacion' do
+  @titulo = " Capacitaci&oacute;n | Dexter Suasor "
+  @header = " Capacitaci&oacute;n "
+  @banner = true
+  erb :capacitacion
+end
+
+get '/cursos' do
+  @titulo = " Lista Cursos | Dexter Suasor "
+  @header = " Lista de Cursos "
+  @banner = true
+  erb :cursos
 end
 
 get '/contacto' do
@@ -275,6 +289,13 @@ get '/validapqr' do
 end
 
 
+get '/bolsa' do
+  @titulo = "Bolsa Trabajo | Dexter Suasor"
+  @confirmacion = true
+  @header = "Bolsa de Trabajo"
+  @banner = true
+  erb :bolsa
+end
 post '/valida' do
   DB.from(:contacto).insert(:fecha => DateTime.now, :name => params[:nombre], :compania => params[:compania], :mail => params[:mail],
                             :telefono => params[:telefono], :estado => params[:estado], :pregunta => params[:pregunta])

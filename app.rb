@@ -265,6 +265,7 @@ end
 get '/contacto' do
   @titulo = " Contacto | Dexter Suasor "
   @estados = DB[:estado].all
+  @confirmacion = false
   @header = " Cont&aacute;ctanos "
   @banner = true
   erb :contacto

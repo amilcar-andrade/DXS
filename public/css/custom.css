@@ -22,6 +22,10 @@ h3 {
 
 }
 
+#section_headline_medium {
+  padding-top: 11px;
+}
+
 h1 {
   font-size: 38px;
 }

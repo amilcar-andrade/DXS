@@ -1,4 +1,14 @@
 <br>
+<% if   @confirmacion = true %>
+
+  <div id="alerta" class="alert-message success" data-alert="alert">
+    <a class="close" href="#">&times;</a>
+
+    <p>Tu solicitud ha sido procesado, en las proximas 24 horas recibiras una respuesta de uno de nuestros ejecutivos.</p>
+  </div>
+
+<% end %>
+
 <div class="row">
   <div class="span7">
     <form method="post" action="/valida" class="form-stacked">
@@ -51,7 +61,7 @@
         <div class="input">
           <select name="estado" id="stackedSelect">
             <% for x in 0...@estados.size do %>    <!-- @estados.size.downto(0) metodo reverse -->
-              <option value="<%=@estados[x][:name] %>"> <%=@estados[x][:name] %></option>
+              <option value="<%= @estados[x][:name] %>"> <%= @estados[x][:name] %></option>
             <% end %>
           </select>
         </div>

@@ -15,7 +15,7 @@ Pony.options= {
     :port => '587',
     :enable_starttls_auto => true,
     :user_name => 'amilcar.andrade.g',
-    :password => 'strokes15',
+    :password => 'strokes1251',
     :authentication => :plain, # :plain, :login, :cram_md5, no auth by default
     :domain => "localhost.localdomain" # the HELO domain provided by the client to the server
   }
@@ -36,6 +36,41 @@ DB.create_table?(:contacto) do
   DateTime :fecha
 
 end
+
+DB.create_table?(:soldador) do
+  primary_key :id
+  String :name
+  String :mail
+  String :telefono
+  String :cel
+  String :edad
+  String :estado
+  String :proceso_soldadura
+  String :tipo_materiales
+  String :experiencia
+  String :proyectos
+  String :swap
+  DateTime :fecha
+end
+
+
+DB.create_table?(:inspector) do
+  primary_key :id
+  String :name
+  String :mail
+  String :telefono
+  String :cel
+  String :edad
+  String :estado
+  String :estudios
+  String :certificaciones
+  String :tecnicas_inspeccion
+  String :proceso_soldadura
+  String :experiencia
+  String :proyectos
+  DateTime :fecha
+end
+
 
 DB.create_table?(:wps) do
   String :id, :primary_key=>true
@@ -291,11 +326,14 @@ end
 
 get '/bolsa' do
   @titulo = "Bolsa Trabajo | Dexter Suasor"
-  @confirmacion = true
+  @estados = DB[:estado].all
+  @confirmacion = false
   @header = "Bolsa de Trabajo"
   @banner = true
   erb :bolsa
 end
+
+
 post '/valida' do
   DB.from(:contacto).insert(:fecha => DateTime.now, :name => params[:nombre], :compania => params[:compania], :mail => params[:mail],
                             :telefono => params[:telefono], :estado => params[:estado], :pregunta => params[:pregunta])
@@ -318,3 +356,62 @@ Fin
   @banner = true
   erb :contacto
 end
+
+post '/valida_soldador' do
+  DB.from(:soldador).insert(:fecha => DateTime.now, :name => params[:nombre], :mail => params[:mail], :telefono => params[:telefono],
+                            :cel => params[:cel], :edad => params[:edad], :estado => params[:estado], :proceso_soldadura => params[:proceso_soldadura], :tipo_materiales => params[:materiales], :experiencia => params[:experiencia], :proyectos => params[:proyectos], :swap => params[:dispuesto])
+
+  htmlcuerpo = <<Fin
+<p><strong>Nombre del soldador:</strong> #{params[:nombre]}   </p>
+<p><strong>E-mail: </strong>#{params[:mail]}</p>
+<p><strong>Telefono: </strong> #{params[:telefono]}</p>
+<p><strong>Telefono Cel : </strong> #{params[:cel]}</p>
+<p><strong>Edad: </strong> #{params[:edad]}</p>
+<p><strong>Estado: </strong>#{params[:estado]} </p>
+<p><strong>Proceso soldadura: </strong>#{params[:proceso_soldadura]}</p>
+<p><strong>Materiales: </strong> #{params[:materiales]}</p>
+<p><strong>Experiencia: </strong> #{params[:experiencia]}</p>
+<p><strong>Proyectos: </strong> #{params[:proyectos]}</p>
+<p><strong>Dispuesto: </strong> #{params[:dispuesto]}</p>
+
+Fin
+
+  Pony.mail(:to => 'amilcar.andrade.g@gmail.com', :html_body => htmlcuerpo, :subject => 'Un nuevo prospecto de Soldador ha llegado')
+  @titulo = "Bolsa Trabajo | Dexter Suasor"
+  @confirmacion = true
+  @estados = DB[:estado].all
+  @header = "Bolsa de Trabajo"
+  @banner = true
+  erb :bolsa
+end
+
+post '/valida_inspector' do
+  DB.from(:inspector).insert(:fecha => DateTime.now, :name => params[:nombre], :mail => params[:mail], :telefono => params[:telefono],
+                             :cel => params[:cel], :edad => params[:edad], :estado => params[:estado], :estudios => params[:grado], :certificaciones => params[:certificaciones], :tecnicas_inspeccion => params[:tecnicas], :proceso_soldadura => params[:proceso_soldadura], :experiencia => params[:experiencia], :proyectos => params[:empresas])
+
+  htmlcuerpo = <<Fin
+<p><strong>Nombre del soldador:</strong> #{params[:nombre]}   </p>
+<p><strong>E-mail: </strong>#{params[:mail]}</p>
+<p><strong>Telefono: </strong> #{params[:telefono]}</p>
+<p><strong>Telefono Cel : </strong> #{params[:cel]}</p>
+<p><strong>Edad: </strong> #{params[:edad]}</p>
+<p><strong>Estado: </strong>#{params[:estado]} </p>
+<p><strong>Escolaridad: </strong>#{params[:grado]} </p>
+<p><strong>Proceso soldadura: </strong>#{params[:proceso_soldadura]}</p>
+<p><strong>Certificaciones: </strong> #{params[:certificaciones]}</p>
+<p><strong>Tecnincas: </strong> #{params[:tecnicas]}</p>
+<p><strong>Proyectos o Experiencia: </strong> #{params[:experiencia]}</p>
+<p><strong>Empresas anteriores: </strong> #{params[:empresas]}</p>
+
+Fin
+
+  Pony.mail(:to => 'amilcar.andrade.g@gmail.com', :html_body => htmlcuerpo, :subject => 'Un nuevo prospecto de Inspector ha llegado')
+  @titulo = "Bolsa Trabajo | Dexter Suasor"
+  @confirmacion = true
+  @estados = DB[:estado].all
+  @header = "Bolsa de Trabajo"
+  @banner = true
+  erb :bolsa
+end
+
+

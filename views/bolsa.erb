@@ -1,120 +1,352 @@
 <br>
+<% if   @confirmacion = true %>
+
+  <div id="alerta" class="alert-message success" data-alert="alert">
+    <a class="close" href="#">&times;</a>
+
+    <p>Tu solicitud ha sido procesado, en las proximas 24 horas recibiras una respuesta de uno de nuestros ejecutivos.</p>
+  </div>
+
+<% end %>
+
 <div class="row">
-  <div class="span7">
-    <form method="post" action="/valida" class="form-stacked">
-      <div class="clearfix">
+  <div class="span16">
+    <p>¿Quieres pertenecer a nuestro equipo como Inspector, o trabajar en alguna empresa en el extranjero como
+      soldador?</p>
 
-        <label for="nombre">Nombre</label>
+    <p>&nbsp;Simplemente llena el siguiente formulario acorde a tu perfil.</p>
+  </div>
 
-        <div class="input">
-          <input class="large" name="nombre" size="30" type="text"/>
+
+</div>
+<br>
+<br>
+<div class="row">
+<div class="span7">
+
+
+  <h3>Soldador.</h3>
+  <img src="images/linea.png" width="465px" height="10px"/>
+
+  <form method="post" action="/valida_soldador" class="form-stacked">
+    <div class="clearfix">
+
+      <label for="nombre">Nombre</label>
+
+      <div class="input">
+        <input class="large" name="nombre" size="30" type="text"/>
+      </div>
+      <span class="help-block">Campo Obligatorio</span>
+
+    </div>
+
+    <!-- /clearfix -->
+
+    <div class="clearfix">
+      <label for="prependedInput">E-mail</label>
+
+      <div class="input">
+        <div class="input-prepend">
+          <span class="add-on">@</span>
+          <input class="medium" name="mail" size="20" type="text"/>
         </div>
         <span class="help-block">Campo Obligatorio</span>
-
       </div>
-      <!-- /clearfix -->
-      <div class="clearfix">
-        <label for="compania">Compañia</label>
+    </div>
+    <!-- /clearfix -->
 
-        <div class="input">
-          <input class="large" name="compania" size="30" type="text"/>
+    <div class="clearfix">
+      <label for="prependedInput">Tel&eacute;fono</label>
+
+      <div class="input">
+        <div class="input-prepend">
+          <span class="add-on">#</span>
+          <input class="medium" name="telefono" size="20" type="text"/>
         </div>
-
+        <span class="help-block">Campo Obligatorio</span>
       </div>
-      <!-- /clearfix -->
-      <div class="clearfix">
-        <label for="prependedInput">E-mail</label>
+    </div>
 
-        <div class="input">
-          <div class="input-prepend">
-            <span class="add-on">@</span>
-            <input class="medium" name="mail" size="20" type="text"/>
-          </div>
-          <span class="help-block">Campo Obligatorio</span>
+    <div class="clearfix">
+      <label for="prependedInput">Tel&eacute;fono Celular</label>
+
+      <div class="input">
+        <div class="input-prepend">
+          <span class="add-on">#</span>
+          <input class="medium" name="cel" size="20" type="text"/>
         </div>
+        <span class="help-block">Campo Obligatorio</span>
       </div>
-      <!-- /clearfix -->
-      <div class="clearfix">
-        <label for="prependedInput">Telefono</label>
+    </div>
 
-        <div class="input">
-          <div class="input-prepend">
-            <span class="add-on">#</span>
-            <input class="medium" name="telefono" size="20" type="text"/>
-          </div>
-          <span class="help-block">Campo Obligatorio</span>
-        </div>
-      </div>
-      <div class="clearfix">
-        <label for="stackedSelect">Estado</label>
+    <div class="clearfix">
+      <label for="compania">Edad</label>
 
-
-      </div>
-      <!-- /clearfix -->
-
-
-      <div class="clearfix">
-        <label for="textarea">Pregunta</label>
-
-        <div class="input">
-          <textarea class="xxlarge" name="pregunta" rows="3"></textarea>
-                                    <span class="help-block"> Escribe tu comentario o pregunta
-                                    </span>
-
-        </div>
+      <div class="input">
+        <input class="small" name="edad" size="10" type="text"/>
       </div>
 
-      <!-- /clearfix -->
-      <br/>
+    </div>
+    <!-- /clearfix -->
+
+    <div class="clearfix">
+      <label for="stackedSelect">Estado de Residencia</label>
+
+      <div class="input">
+        <select name="estado" id="stackedSelect">
+          <% for x in 0...@estados.size do %>    <!-- @estados.size.downto(0) metodo reverse -->
+            <option value="<%= @estados[x][:name] %>"> <%= @estados[x][:name] %></option>
+          <% end %>
+        </select>
+      </div>
+    </div>
+    <!-- /clearfix -->
 
 
-      &nbsp;
-      <button class="btn success" type="submit">Enviar</button>
-      &nbsp;
-      <button class="btn danger" type="reset">Limpiar</button>
+    <div class="clearfix">
+      <label for="textarea"> Procesos de soldadura que manejas:
+      </label>
 
-    </form>
-
-  </div>
-
-
-  <div class="span5">
-    <h3>Dirección</h3>
-    <address>
-      <strong>Dexter Suasor</strong><br/>
-      Ensenada 91<br/>
-      Del. Cuauhtémoc<br/>
-      México DF<br/>
-      <abbr title="Phone">Tel:</abbr> +52 (55) 4329 9710 <br/>
-      <abbr title="ID">ID:</abbr> 62*12*29030
-
-    </address>
-    <address>
-      <strong>E-mail</strong><br/>
-      <a href="mailto:soporte@dextersuasor.com">soporte@dextersuasor.com</a>
-
-    </address>
-    <img src="images/rojo3.jpg" width="130" height="140"/>
+      <div class="input">
+        <textarea class="xlarge" name="proceso_soldadura" rows="3"></textarea>
+        <span class="help-block">Campo Obligatorio</span>
 
 
-  </div>
-  <div class="span5">
-    <h3>Mapa </h3>
+      </div>
+    </div>
+    <div class="clearfix">
+      <label for="textarea"> Tipo de materiales que sueldas:
+      </label>
 
-    <ul class="media-grid">
-      <li>
-        <a href="#">
-          <img class="thumbnail">
-          <iframe width="310" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com.mx/maps?f=q&amp;source=s_q&amp;hl=es-419&amp;geocode=&amp;q=Ensenada+91+Del.+Cuauht%C3%A9moc+M%C3%A9xico+DF&amp;aq=&amp;sll=23.625269,-102.540613&amp;sspn=23.175469,36.870117&amp;vpsrc=0&amp;ie=UTF8&amp;hq=&amp;hnear=Ensenada+91,+Hip%C3%B3dromo,+Cuauht%C3%A9moc,+Ciudad+de+M%C3%A9xico,+Distrito+Federal&amp;t=p&amp;ll=19.407669,-99.175901&amp;spn=0.024286,0.025749&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
-          <br/>
-
-        </a>
-      </li>
-    </ul>
-    <small>
-      <a href="http://maps.google.com.mx/maps?f=q&amp;source=embed&amp;hl=es-419&amp;geocode=&amp;q=Ensenada+91+Del.+Cuauht%C3%A9moc+M%C3%A9xico+DF&amp;aq=&amp;sll=23.625269,-102.540613&amp;sspn=23.175469,36.870117&amp;vpsrc=0&amp;ie=UTF8&amp;hq=&amp;hnear=Ensenada+91,+Hip%C3%B3dromo,+Cuauht%C3%A9moc,+Ciudad+de+M%C3%A9xico,+Distrito+Federal&amp;t=p&amp;ll=19.407669,-99.175901&amp;spn=0.024286,0.025749&amp;z=14&amp;iwloc=A" style="color:#0000FF;text-align:left">Ver
-        mapa más grande</a></small>
+      <div class="input">
+        <textarea class="xlarge" name="materiales" rows="3"></textarea>
+        <span class="help-block">Campo Obligatorio</span>
 
 
-  </div>
+      </div>
+    </div>
+
+
+    <div class="clearfix">
+      <label for="compania"> Años de experiencia como soldador:
+      </label>
+
+      <div class="input">
+        <input class="small" name="experiencia" size="10" type="text"/>
+      </div>
+      <span class="help-block">Campo Obligatorio</span>
+
+    </div>
+
+    <div class="clearfix">
+      <label for="textarea"> Principales empresas o proyectos en donde has estado:
+      </label>
+
+      <div class="input">
+        <textarea class="xlarge" name="proyectos" rows="3"></textarea>
+        <span class="help-block">Campo Obligatorio</span>
+
+
+      </div>
+    </div>
+
+    <div class="clearfix">
+      <label for="stackedSelect"> Estarías dispuesto a cambiar de residencia y/o trabajar en un proyecto fuera del país?
+      </label>
+
+      <div class="input">
+        <select name="dispuesto">
+          <option value="0"></option>
+          <option value="No"> No</option>
+          <option value="Si"> Si</option>
+        </select>
+      </div>
+      <span class="help-block">Campo Obligatorio</span>
+
+    </div>
+
+    <!-- /clearfix -->
+    <br/>
+
+
+    &nbsp;
+    <button class="btn success" type="submit">Enviar</button>
+    &nbsp;
+    <button class="btn danger" type="reset">Limpiar</button>
+
+  </form>
+
 </div>
+
+<div class="span2">
+  &nbsp;
+</div>
+
+
+<div class="span7">
+  <h3>Inspector de Soldadura.</h3>
+  <img src="images/linea.png" width="465px" height="10px"/>
+
+  <form method="post" action="/valida_inspector" class="form-stacked">
+    <div class="clearfix">
+
+      <label for="nombre">Nombre</label>
+
+      <div class="input">
+        <input class="large" name="nombre" size="30" type="text"/>
+      </div>
+      <span class="help-block">Campo Obligatorio</span>
+
+    </div>
+
+    <!-- /clearfix -->
+
+    <div class="clearfix">
+      <label for="prependedInput">E-mail</label>
+
+      <div class="input">
+        <div class="input-prepend">
+          <span class="add-on">@</span>
+          <input class="medium" name="mail" size="20" type="text"/>
+        </div>
+        <span class="help-block">Campo Obligatorio</span>
+      </div>
+    </div>
+    <!-- /clearfix -->
+
+    <div class="clearfix">
+      <label for="prependedInput">Tel&eacute;fono</label>
+
+      <div class="input">
+        <div class="input-prepend">
+          <span class="add-on">#</span>
+          <input class="medium" name="telefono" size="20" type="text"/>
+        </div>
+        <span class="help-block">Campo Obligatorio</span>
+      </div>
+    </div>
+
+    <div class="clearfix">
+      <label for="prependedInput">Tel&eacute;fono Celular</label>
+
+      <div class="input">
+        <div class="input-prepend">
+          <span class="add-on">#</span>
+          <input class="medium" name="cel" size="20" type="text"/>
+        </div>
+        <span class="help-block">Campo Obligatorio</span>
+      </div>
+    </div>
+
+    <div class="clearfix">
+      <label for="compania">Edad</label>
+
+      <div class="input">
+        <input class="small" name="edad" size="10" type="text"/>
+      </div>
+
+    </div>
+
+    <div class="clearfix">
+      <label for="stackedSelect">Grado de estudios</label>
+
+      <div class="input">
+        <select name="grado">
+          <option value="No tiene"></option>
+          <option value="Primaria">Primaria</option>
+          <option value="Secundaria">Secundaria</option>
+          <option value="Preparatoria">Preparatoria</option>
+          <option value="Universidad">Universidad</option>
+        </select>
+      </div>
+      <span class="help-block">Campo Obligatorio</span>
+    </div>
+    <!-- /clearfix -->
+
+    <div class="clearfix">
+      <label for="stackedSelect">Estado de Residencia</label>
+
+      <div class="input">
+        <select name="estado">
+          <% for x in 0...@estados.size do %>    <!-- @estados.size.downto(0) metodo reverse -->
+            <option value="<%= @estados[x][:name] %>"> <%= @estados[x][:name] %></option>
+          <% end %>
+        </select>
+      </div>
+    </div>
+    <!-- /clearfix -->
+
+    <div class="clearfix">
+      <label for="textarea">Certificaciones:
+      </label>
+
+      <div class="input">
+        <textarea class="xlarge" name="certificaciones" rows="3"></textarea>
+        <span class="help-block">Campo Obligatorio</span>
+
+
+      </div>
+    </div>
+
+    <div class="clearfix">
+      <label for="textarea">Técnicas de Inspección que conoces:
+      </label>
+
+      <div class="input">
+        <textarea class="xlarge" name="tecnicas" rows="3"></textarea>
+        <span class="help-block">Campo Obligatorio</span>
+
+
+      </div>
+    </div>
+
+    <div class="clearfix">
+      <label for="textarea">Procesos de soldadura que manejas:
+      </label>
+
+      <div class="input">
+        <textarea class="xlarge" name="proceso_soldadura" rows="3"></textarea>
+        <span class="help-block">Campo Obligatorio</span>
+
+
+      </div>
+    </div>
+
+    <div class="clearfix">
+      <label for="compania">Años de experiencia como Inspector:
+      </label>
+
+      <div class="input">
+        <input class="small" name="experiencia" size="10" type="text"/>
+      </div>
+      <span class="help-block">Campo Obligatorio</span>
+
+    </div>
+
+    <!-- /clearfix -->
+
+    <div class="clearfix">
+      <label for="textarea">Principales empresas o proyectos en donde has estado:
+      </label>
+
+      <div class="input">
+        <textarea class="xlarge" name="empresas" rows="3"></textarea>
+        <span class="help-block">Campo Obligatorio</span>
+
+
+      </div>
+    </div>
+    <br/>
+
+
+    &nbsp;
+    <button class="btn success" type="submit">Enviar</button>
+    &nbsp;
+    <button class="btn danger" type="reset">Limpiar</button>
+
+  </form>
+
+</div>
+
+</div>
+

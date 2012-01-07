@@ -4,10 +4,9 @@
     <list default="true" id="bb2f414f-ae30-4213-8483-83cc8587253d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.rb" afterPath="$PROJECT_DIR$/app.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/certificaciones.erb" afterPath="$PROJECT_DIR$/views/certificaciones.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/inicio.erb" afterPath="$PROJECT_DIR$/views/inicio.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/bolsa.erb" afterPath="$PROJECT_DIR$/views/bolsa.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/contacto.erb" afterPath="$PROJECT_DIR$/views/contacto.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layout.erb" afterPath="$PROJECT_DIR$/views/layout.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pqr.erb" afterPath="$PROJECT_DIR$/views/pqr.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/valores.erb" afterPath="$PROJECT_DIR$/views/valores.erb" />
     </list>
     <ignored path="DXS.iws" />
@@ -31,10 +30,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="bolsa.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="bolsa.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/bolsa.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="8" selection-start="1460" selection-end="1460" vertical-scroll-proportion="0.5390625">
+            <state line="9" column="9" selection-start="292" selection-end="292" vertical-scroll-proportion="-5.625">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="407" column="119" selection-start="11136" selection-end="11136" vertical-scroll-proportion="0.63355047">
               <folding />
             </state>
           </provider>
@@ -43,16 +51,7 @@
       <file leaf-file-name="contacto.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/contacto.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="99" column="3" selection-start="0" selection-end="4170" vertical-scroll-proportion="-14.958333">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="295" column="19" selection-start="6517" selection-end="6517" vertical-scroll-proportion="0.0">
+            <state line="7" column="12" selection-start="281" selection-end="281" vertical-scroll-proportion="-4.375">
               <folding />
             </state>
           </provider>
@@ -72,7 +71,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/archivos/base.csv" />
         <option value="$PROJECT_DIR$/public/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/public/css/custom.css" />
         <option value="$PROJECT_DIR$/views/empresa.erb" />
@@ -81,13 +79,14 @@
         <option value="$PROJECT_DIR$/views/proyectos.erb" />
         <option value="$PROJECT_DIR$/views/pqr.erb" />
         <option value="$PROJECT_DIR$/views/cursos.erb" />
-        <option value="$PROJECT_DIR$/views/valores.erb" />
         <option value="$PROJECT_DIR$/views/inicio.erb" />
         <option value="$PROJECT_DIR$/views/certificaciones.erb" />
         <option value="$PROJECT_DIR$/views/capacitacion.erb" />
+        <option value="$PROJECT_DIR$/views/valores.erb" />
         <option value="$PROJECT_DIR$/views/layout.erb" />
-        <option value="$PROJECT_DIR$/app.rb" />
+        <option value="$PROJECT_DIR$/views/contacto.erb" />
         <option value="$PROJECT_DIR$/views/bolsa.erb" />
+        <option value="$PROJECT_DIR$/app.rb" />
       </list>
     </option>
   </component>
@@ -136,6 +135,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Favorites" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -216,8 +217,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Favorites" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -382,7 +381,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.670088" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.99852943" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -438,16 +437,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/images/key.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/ensayos.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/images/c1.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -473,65 +462,71 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/cursos.erb">
+    <entry file="file://$PROJECT_DIR$/views/proyectos.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="76" selection-start="926" selection-end="926" vertical-scroll-proportion="0.19077902">
-          <folding />
-        </state>
+        <state line="83" column="19" selection-start="2235" selection-end="2235" vertical-scroll-proportion="0.618442" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/valores.erb">
+    <entry file="file://$PROJECT_DIR$/views/capacitacion.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="4" selection-start="52" selection-end="513" vertical-scroll-proportion="-3.125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/certificaciones.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="46" selection-start="3988" selection-end="3988" vertical-scroll-proportion="1.9793323">
-          <folding />
-        </state>
+        <state line="37" column="74" selection-start="1399" selection-end="1399" vertical-scroll-proportion="0.88235295" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/inicio.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="10" selection-start="1788" selection-end="1788" vertical-scroll-proportion="0.95230526">
+        <state line="51" column="10" selection-start="1788" selection-end="1788" vertical-scroll-proportion="1.2162162" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/cursos.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="76" selection-start="926" selection-end="926" vertical-scroll-proportion="0.85850555" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/valores.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="66" selection-start="780" selection-end="780" vertical-scroll-proportion="0.024429968">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/layout.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="56" selection-start="3799" selection-end="3799" vertical-scroll-proportion="0.7154213">
+        <state line="108" column="31" selection-start="3774" selection-end="3774" vertical-scroll-proportion="20.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/capacitacion.erb">
+    <entry file="file://$PROJECT_DIR$/views/wis.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="74" selection-start="1399" selection-end="1399" vertical-scroll-proportion="0.6438792">
+        <state line="46" column="7" selection-start="1107" selection-end="1347" vertical-scroll-proportion="-14.291667">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/certificaciones.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="104" column="46" selection-start="3988" selection-end="3988" vertical-scroll-proportion="0.99046105">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/contacto.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="3" selection-start="0" selection-end="4170" vertical-scroll-proportion="-14.958333">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="295" column="19" selection-start="6517" selection-end="6517" vertical-scroll-proportion="0.0">
+        <state line="7" column="12" selection-start="281" selection-end="281" vertical-scroll-proportion="-4.375">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/bolsa.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="8" selection-start="1460" selection-end="1460" vertical-scroll-proportion="0.5390625">
+        <state line="9" column="9" selection-start="292" selection-end="292" vertical-scroll-proportion="-5.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="407" column="119" selection-start="11136" selection-end="11136" vertical-scroll-proportion="0.63355047">
           <folding />
         </state>
       </provider>

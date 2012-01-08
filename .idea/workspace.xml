@@ -4,10 +4,7 @@
     <list default="true" id="bb2f414f-ae30-4213-8483-83cc8587253d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.rb" afterPath="$PROJECT_DIR$/app.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/custom.css" afterPath="$PROJECT_DIR$/public/css/custom.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/bolsa.erb" afterPath="$PROJECT_DIR$/views/bolsa.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/contacto.erb" afterPath="$PROJECT_DIR$/views/contacto.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layout.erb" afterPath="$PROJECT_DIR$/views/layout.erb" />
     </list>
     <ignored path="DXS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,37 +27,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="bolsa.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/bolsa.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="22" selection-start="27" selection-end="27" vertical-scroll-proportion="-0.625">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="layout.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="layout.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/layout.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="121" column="2" selection-start="3914" selection-end="3914" vertical-scroll-proportion="0.26232114">
+            <state line="121" column="2" selection-start="3914" selection-end="3914" vertical-scroll-proportion="-0.625">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="valores.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/valores.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="66" selection-start="780" selection-end="780" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="app.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="267" column="23" selection-start="5782" selection-end="5782" vertical-scroll-proportion="0.0">
+            <state line="43" column="0" selection-start="1110" selection-end="1110" vertical-scroll-proportion="0.8828125">
               <folding />
             </state>
           </provider>
@@ -69,16 +48,7 @@
       <file leaf-file-name="wis.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/wis.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="16" selection-start="1327" selection-end="1327" vertical-scroll-proportion="-12.5">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contacto.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/contacto.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="22" selection-start="27" selection-end="27" vertical-scroll-proportion="-0.625">
+            <state line="52" column="16" selection-start="1327" selection-end="1327" vertical-scroll-proportion="-10.583333">
               <folding />
             </state>
           </provider>
@@ -109,11 +79,11 @@
         <option value="$PROJECT_DIR$/views/certificaciones.erb" />
         <option value="$PROJECT_DIR$/views/capacitacion.erb" />
         <option value="$PROJECT_DIR$/views/valores.erb" />
-        <option value="$PROJECT_DIR$/app.rb" />
         <option value="$PROJECT_DIR$/public/css/custom.css" />
         <option value="$PROJECT_DIR$/views/contacto.erb" />
-        <option value="$PROJECT_DIR$/views/bolsa.erb" />
         <option value="$PROJECT_DIR$/views/layout.erb" />
+        <option value="$PROJECT_DIR$/views/bolsa.erb" />
+        <option value="$PROJECT_DIR$/app.rb" />
       </list>
     </option>
   </component>
@@ -162,7 +132,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -243,16 +212,17 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="Errors" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
-    <property name="options.searchVisible" value="true" />
+    <property name="options.lastSelected" value="Errors" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -504,13 +474,6 @@
         <state line="104" column="46" selection-start="3988" selection-end="3988" vertical-scroll-proportion="0.99046105" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/valores.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="66" selection-start="780" selection-end="780" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/images/chiquis.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -518,42 +481,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="17" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="25" column="17" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.rb">
+    <entry file="file://$PROJECT_DIR$/views/valores.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="267" column="23" selection-start="5782" selection-end="5782" vertical-scroll-proportion="0.0">
+        <state line="16" column="66" selection-start="780" selection-end="780" vertical-scroll-proportion="0.023847377" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/contacto.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="22" selection-start="27" selection-end="27" vertical-scroll-proportion="0.024350649">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/wis.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="16" selection-start="1327" selection-end="1327" vertical-scroll-proportion="-12.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/contacto.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="22" selection-start="27" selection-end="27" vertical-scroll-proportion="-0.625">
+        <state line="52" column="16" selection-start="1327" selection-end="1327" vertical-scroll-proportion="-10.583333">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/bolsa.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="22" selection-start="27" selection-end="27" vertical-scroll-proportion="-0.625">
+        <state line="276" column="10" selection-start="7297" selection-end="7297" vertical-scroll-proportion="6.581876">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/layout.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="2" selection-start="3914" selection-end="3914" vertical-scroll-proportion="0.26232114">
+        <state line="121" column="2" selection-start="3914" selection-end="3914" vertical-scroll-proportion="-0.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="0" selection-start="1110" selection-end="1110" vertical-scroll-proportion="0.8828125">
           <folding />
         </state>
       </provider>

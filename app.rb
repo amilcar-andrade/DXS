@@ -8,21 +8,42 @@ require "pony"
 require "mysql2"
 require "iconv"
 
-Pony.options= {
-  :via => :smtp,
-  :via_options => {
-    :address => 'smtp.gmail.com',
-    :port => '587',
-    :enable_starttls_auto => true,
-    :user_name => 'amilcar.andrade.g',
-    :password => 'strokes1251',
-    :authentication => :plain, # :plain, :login, :cram_md5, no auth by default
-    :domain => "localhost.localdomain" # the HELO domain provided by the client to the server
+if ENV['DATABASE_URL'] == nil
+  HEROKU = false
+  Pony.options= {
+    :via => :smtp,
+    :via_options => {
+      :address => 'smtp.gmail.com',
+      :port => '587',
+      :enable_starttls_auto => true,
+      :user_name => 'amilcar.andrade.g',
+      :password => 'strokes1251',
+      :authentication => :plain, # :plain, :login, :cram_md5, no auth by default
+      :domain => "localhost.localdomain" # the HELO domain provided by the client to the server
+    }
   }
-}
+
+  DB = Sequel.connect(:adapter => "mysql2", :host=>"localhost", :user=>"root", :database=>"DXRS")
+
+else
+  HEROKU = true
+  Pony.options = {
+    :via => :smtp,
+    :via_options => {
+      :address => 'smtp.sendgrid.net',
+      :port => '587',
+      :domain => 'heroku.com',
+      :user_name => ENV['SENDGRID_USERNAME'],
+      :password => ENV['SENDGRID_PASSWORD'],
+      :authentication => :plain,
+      :enable_starttls_auto => true
+    }
+  }
+
+  DB = Sequel.connect(ENV['DATABASE_URL'])
 
 
-DB = Sequel.connect(:adapter => "mysql2", :host=>"localhost", :user=>"root", :database=>"DXRS")
+end
 
 
 DB.create_table?(:contacto) do
@@ -366,18 +387,18 @@ post '/valida_soldador' do
 <p><strong>Nombre del soldador:</strong> #{params[:nombre]}   </p>
 <p><strong>E-mail: </strong>#{params[:mail]}</p>
 <p><strong>Telefono: </strong> #{params[:telefono]}</p>
-<p><strong>Telefono Cel : </strong> #{params[:cel]}</p>
+<p><strong>Telefono Cel: </strong> #{params[:cel]}</p>
 <p><strong>Edad: </strong> #{params[:edad]}</p>
 <p><strong>Estado: </strong>#{params[:estado]} </p>
 <p><strong>Proceso soldadura: </strong>#{params[:proceso_soldadura]}</p>
 <p><strong>Materiales: </strong> #{params[:materiales]}</p>
 <p><strong>Experiencia: </strong> #{params[:experiencia]}</p>
 <p><strong>Proyectos: </strong> #{params[:proyectos]}</p>
-<p><strong>Dispuesto: </strong> #{params[:dispuesto]}</p>
+<p><strong>Dispuesto a cambiar: </strong> #{params[:dispuesto]}</p>
 
 Fin
 
-  Pony.mail(:to => 'amilcar.andrade.g@gmail.com', :html_body => htmlcuerpo, :subject => 'Un nuevo prospecto de Soldador ha llegado')
+  Pony.mail(:to => 'miguel.andrade@dextersuasor.com', :html_body => htmlcuerpo, :subject => 'Bolsa de Trabajo Soldador')
   @titulo = "Bolsa Trabajo | Dexter Suasor"
   @confirmacion = true
   @estados = DB[:estado].all
@@ -394,7 +415,7 @@ post '/valida_inspector' do
 <p><strong>Nombre del soldador:</strong> #{params[:nombre]}   </p>
 <p><strong>E-mail: </strong>#{params[:mail]}</p>
 <p><strong>Telefono: </strong> #{params[:telefono]}</p>
-<p><strong>Telefono Cel : </strong> #{params[:cel]}</p>
+<p><strong>Telefono Cel: </strong> #{params[:cel]}</p>
 <p><strong>Edad: </strong> #{params[:edad]}</p>
 <p><strong>Estado: </strong>#{params[:estado]} </p>
 <p><strong>Escolaridad: </strong>#{params[:grado]} </p>
@@ -406,7 +427,7 @@ post '/valida_inspector' do
 
 Fin
 
-  Pony.mail(:to => 'amilcar.andrade.g@gmail.com', :html_body => htmlcuerpo, :subject => 'Un nuevo prospecto de Inspector ha llegado')
+  Pony.mail(:to => 'miguel.andrade@dextersuasor.com', :html_body => htmlcuerpo, :subject => 'Bolsa de Trabajo Inspector')
   @titulo = "Bolsa Trabajo | Dexter Suasor"
   @confirmacion = true
   @estados = DB[:estado].all
